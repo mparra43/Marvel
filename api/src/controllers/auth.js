@@ -20,8 +20,8 @@ const createUser = async (req, res = response) => {
                 password: encPassword,
             });
 
-                const token = await generateJWT(newUser.id, newUser.name);
-                return res.status(201).json({ok: true, msg: "Se ha creado el usuario", token});
+            const token = await generateJWT(newUser.id, newUser.name);
+            return res.status(201).json({ok: true, msg: "Se ha creado el usuario", token});
         }
 
     } catch (error) {

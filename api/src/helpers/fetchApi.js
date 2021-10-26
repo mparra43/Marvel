@@ -10,14 +10,14 @@ const fetchAllApiCharacters = async () => {
         const response = await fetch(url);
         const data = await response.json();
 
-        for (let i = 0; i < data.results.length; i++) {
-            let {id, name, description, thumbnail, comics} = data.results[i];
+        for (let i = 0; i < data.data.results.length; i++) {
+            let {id, name, description, thumbnail, comics} = data.data.results[i];
             charactersApi.push({
                 id,
                 name,
                 description,
                 thumbnail: `${thumbnail.path}.${thumbnail.extension}`,
-                comics,
+                comics: comics.items
             });
         }
         charactersApi.sort(function (a, b) {
