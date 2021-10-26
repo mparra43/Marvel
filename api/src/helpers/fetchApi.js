@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 
 
-const fetchAllApiCharacters = async () => {
+const fetchAllApiComic = async () => {
     const url = `${baseUrl}`;
     const charactersApi = [];
     try {
@@ -11,13 +11,14 @@ const fetchAllApiCharacters = async () => {
         const data = await response.json();
 
         for (let i = 0; i < data.data.results.length; i++) {
-            let {id, name, description, thumbnail, comics} = data.data.results[i];
+            let {id, title, description, thumbnail, creators, characters} = data.data.results[i];
             charactersApi.push({
                 id,
-                name,
+                title,
                 description,
-                thumbnail: `${thumbnail.path}.${thumbnail.extension}`,
-                comics: comics.items
+                image: `${thumbnail.path}.${thumbnail.extension}`,
+                creators: creators.items,
+                characters: characters.items
             });
         }
         charactersApi.sort(function (a, b) {

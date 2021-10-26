@@ -1,7 +1,7 @@
 const {DataTypes} = require('sequelize');
 const {sequelize} = require('../db');
 
-const Character = sequelize.define('character', {
+const Comic = sequelize.define('comic', {
     uid: {
         primaryKey: true,
         type: DataTypes.INTEGER,
@@ -20,9 +20,12 @@ const Character = sequelize.define('character', {
     image: {
         type: DataTypes.STRING,
     },
-    comics: {
+    creators: {
         type: DataTypes.STRING,
     },
+    characters: {
+        type: DataTypes.STRING,
+    }
 });
 
-module.exports = Character;
+module.exports = Comic;

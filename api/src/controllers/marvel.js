@@ -1,6 +1,6 @@
 const {response} = require('express');
-const {fetchAllApiCharacters} = require('../helpers/fetchApi')
-const {Character} = require('../models/Character');
+const {fetchAllApiComic} = require('../helpers/fetchApi')
+const {Comic} = require('../models/Comic');
 
 
 
@@ -8,8 +8,8 @@ const {Character} = require('../models/Character');
 const charactersAll = async (req, res = response) => {
 
     try {
-        const charactersApi = await fetchAllApiCharacters()
-        return res.status(200).json({data: charactersApi});
+        const comicApi = await fetchAllApiComic()
+        return res.status(200).json({data: comicApi});
     } catch (error) {
         return res.status(500).json({msg: "error"});
     }
@@ -18,25 +18,35 @@ const charactersAll = async (req, res = response) => {
 
 
 const addFavorite = async (req, res = response) => {
-    const {uid,cid, name, description, image, comics} = req.body;
+    const {uid,cid, title, description, image, creators, characters} = req.body;
 
     try {
-        let newPokemon = await Character.create({
+        let newPokemon = await Comic.create({
             uid,
             cid,
-            name,
+            title,
             description,
             image,
-            comics: comics.toString()
+            creators: creators.toString(),
+            characters: characters.toString()
+
         });
-        return res.status(201).json({ok: true, msg: "se agregó un nuevo personaje  favorito"});
+        return res.status(201).json({ok: true, msg: "se agregó un nuevo comic  favorito"});
     } catch (e) {
         return res.status(500).json({msg: "error"})
     }
 }
-
+const allFavorites = async (req, res = response) => {
+    try {
+        const {count, rows} = await Comic.findAndCountAll();
+        return res.status(201).json({data: rows});
+    } catch (error) {
+        return res.status(500).json({msg: "error"});
+    }
+}
 
 module.exports = {
     charactersAll,
     addFavorite,
+    allFavorites,
 }
