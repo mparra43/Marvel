@@ -31,7 +31,6 @@ export const marvelReducer = (state = initialState, action) => {
                 comic: action.payload,
             }
         case types.postComic:
-
             return {
                 ...state,
                 favorites: action.payload.data

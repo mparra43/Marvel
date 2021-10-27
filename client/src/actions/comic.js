@@ -22,7 +22,7 @@ export const addComic = (comic) => {
         const favorites = await resp.json();
         try {
             if (favorites.ok) {
-                const resp = await getAllFavorites('allFavorites');
+                const resp = await fetchWithToken('allFavorites');
                 const data = await resp.json();
                 dispatch({type: types.postComic, payload: data})
             }
