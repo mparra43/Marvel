@@ -29,3 +29,13 @@ La página se recargará si realiza modificaciones.
 También verá errores de pelusa en la consola.
 
 ### `HOME`
+![image](https://user-images.githubusercontent.com/66500440/139009302-cdefa285-2964-4598-b0a7-618c49aba21b.png)
+
+### `MAIN SCREEN`
+![image](https://user-images.githubusercontent.com/66500440/139009490-a449bb52-162f-4b15-baa9-85de8dafd03d.png)
+
+### `DETAIL SCREEN`
+![image](https://user-images.githubusercontent.com/66500440/139009844-4916eb93-e04f-4ca7-a819-fb20e6ea5a4d.png)
+
+### `FAVORITES`
+![image](https://user-images.githubusercontent.com/66500440/139010238-d0539b62-e816-4d8e-a9ba-fc3acfb2b870.png)
