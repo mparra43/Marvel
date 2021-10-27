@@ -18,7 +18,7 @@ const charactersAll = async (req, res = response) => {
 
 
 const addFavorite = async (req, res = response) => {
-    const {uid,cid, title, description, image, creators, characters} = req.body;
+    const {uid,cid, title, description, image} = req.body;
 
     try {
         let newPokemon = await Comic.create({
@@ -27,16 +27,14 @@ const addFavorite = async (req, res = response) => {
             title,
             description,
             image,
-            creators: creators.toString(),
-            characters: characters.toString()
-
         });
-        return res.status(201).json({ok: true, msg: "se agregó un nuevo comic  favorito"});
+        return res.status(201).json({ok: true, msg: "se agregó un nuevo comic favorito"});
     } catch (e) {
         return res.status(500).json({msg: "error"})
     }
 }
 const allFavorites = async (req, res = response) => {
+    const {uid} = req.params;
     try {
         const {count, rows} = await Comic.findAndCountAll();
         return res.status(201).json({data: rows});

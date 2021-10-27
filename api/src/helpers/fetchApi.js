@@ -36,5 +36,5 @@ const fetchAllApiComic = async () => {
 
 
 module.exports = {
-    fetchAllApiCharacters
+    fetchAllApiComic
 }

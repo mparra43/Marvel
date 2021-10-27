@@ -11,7 +11,7 @@ const Comic = sequelize.define('comic', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    name: {
+    title: {
         type: DataTypes.STRING,
     },
     description: {
@@ -20,12 +20,10 @@ const Comic = sequelize.define('comic', {
     image: {
         type: DataTypes.STRING,
     },
-    creators: {
-        type: DataTypes.STRING,
-    },
-    characters: {
-        type: DataTypes.STRING,
-    }
+
 });
 
-module.exports = Comic;
+module.exports = {
+    Comic
+}
+;
