@@ -7,11 +7,11 @@ Para ejecutar el proyecto es necesario crear un la raíz de la carpeta api un ar
 
 ## Servicios 
 
- Crear un usuario: /marvel/auth/new/
- Autenticación: /marvel/auth/login
- Get de los comics : /marvel/all
- agregar un favorito: /marvel/addFavorite
- get a los favoritos:/marvel/allFavorites
+ Crear un usuario: /marvel/auth/new/<br />
+ Autenticación: /marvel/auth/login<br />
+ Get de los comics : /marvel/all<br />
+ agregar un favorito: /marvel/addFavorite<br />
+ get a los favoritos:/marvel/allFavorites<br />
 
 
 ### `npm run dev`
